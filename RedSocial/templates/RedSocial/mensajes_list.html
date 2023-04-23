@@ -1,0 +1,20 @@
+{% extends "RedSocial/base.html" %}
+{% block main %}    
+<ul>
+    <h1>Lista de Publicaciones</h1>
+
+    {% if not mensajes %}
+        <h2>No tienes ningun mensaje</h2>
+    {% endif %}
+    {% for mensaje in mensajes %}
+    <li>
+        
+        {{mensaje.asunto}} 
+        {% if user.is_authenticated %}
+            <a href="{% url 'mensajes-detail' mensaje.id %}">Detalle</a>
+            <a href="{% url 'mensajes-delete' mensaje.id %}">Borrar</a>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

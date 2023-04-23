@@ -1,0 +1,16 @@
+{% extends "RedSocial/base.html" %}
+{% block main %}   
+<p>
+    <h1>Mensaje</h1>
+
+    Asunto: {{object.asunto}}
+    <br>
+    Mail de contacto: {{object.email}}
+    <br>
+    {{object.mensaje}}
+    <br>
+
+    <a href="{% url 'mensajes-list' %}">Volver</a>
+
+</p>
+{% endblock %}

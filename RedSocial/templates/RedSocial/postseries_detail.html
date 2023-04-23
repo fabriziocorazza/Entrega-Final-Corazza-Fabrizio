@@ -1,0 +1,18 @@
+{% extends "RedSocial/base.html" %}
+{% block main %}   
+<p>
+    <h1>{{object.Nombre_de_la_serie}}</h1>
+    {% if object.imagen %}
+    <img src="{{ object.imagen.url }}" width="320px" height="100%">
+    <br>
+    {% endif %}
+    {{object.Platamormas}}
+    <br>
+    {{object.Descripcion_de_la_serie}}
+    <br>
+    {{object.fecha}}
+    <br>
+    <a href="{% url 'post-list' %}">Volver</a>
+
+</p>
+{% endblock %}
